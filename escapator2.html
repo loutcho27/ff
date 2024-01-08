@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deux Champs de Texte</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .question {
+      text-align: center;
+      max-width: 400px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 12px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="question">
+    <label for="annee">Année du premier ordinateur :</label>
+    <input type="text" id="annee" placeholder="Entrez l'année">
+  </div>
+
+  <div class="question">
+    <label for="inventeur">Nom de l'inventeur du premier microprocesseur :</label>
+    <input type="text" id="inventeur" placeholder="Entrez le nom">
+  </div>
+
+  <button onclick="validateAnswers()">Valider</button>
+
+  <script>
+    function validateAnswers() {
+      var anneeInput = document.getElementById("annee").value.trim();
+      var inventeurInput = document.getElementById("inventeur").value.trim();
+
+      if (anneeInput === "1946" && inventeurInput.toLowerCase() === "ted hoff") {
+        alert("Bonne réponse pour les deux! Vous pouvez ajouter votre logique de redirection ici.");
+      } else {
+        alert("Mauvaise réponse! Essayez à nouveau.");
+      }
+    }
+  </script>
+</body>
+</html>
